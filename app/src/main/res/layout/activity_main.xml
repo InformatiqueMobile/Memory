@@ -23,7 +23,8 @@
         android:id="@+id/onePlayerButton"
         android:layout_below="@+id/twoPlayersButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="129dp" />
+        android:layout_marginTop="129dp"
+        android:onClick="onePlayerClick"/>
 
     <Button
         android:layout_width="wrap_content"
