@@ -20,7 +20,6 @@
         android:layout_height="wrap_content"
         android:text="Play"
         android:id="@+id/playButton"
-        android:layout_below="@+id/nameEditText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="88dp" />
 </RelativeLayout>

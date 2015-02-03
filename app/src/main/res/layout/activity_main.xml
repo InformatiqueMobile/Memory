@@ -13,34 +13,34 @@
         android:text="2 Players"
         android:id="@+id/twoPlayersButton"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="88dp" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="1 Player"
         android:id="@+id/onePlayerButton"
+        android:layout_marginTop="50dp"
+        android:onClick="onePlayerClick"
         android:layout_below="@+id/twoPlayersButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="129dp"
-        android:onClick="onePlayerClick"/>
+        android:layout_alignLeft="@+id/twoPlayersButton"
+        android:layout_alignStart="@+id/twoPlayersButton" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="High Scores"
         android:id="@+id/highScoresButton"
-        android:layout_below="@+id/onePlayerButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="198dp" />
+        android:layout_above="@+id/exitButton"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Exit"
         android:id="@+id/exitButton"
-        android:layout_below="@+id/highScoresButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="107dp" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/onePlayerButton"
+        android:layout_alignStart="@+id/onePlayerButton"
+        android:layout_marginBottom="58dp" />
 </RelativeLayout>

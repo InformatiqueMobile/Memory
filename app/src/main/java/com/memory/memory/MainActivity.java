@@ -1,5 +1,6 @@
 package com.memory.memory;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -41,5 +42,10 @@ public class MainActivity extends ActionBarActivity {
 
     public void onePlayerClick(View view){
         Toast.makeText(MainActivity.this, "Button Clicked", Toast.LENGTH_SHORT).show();
+    }
+
+    public void twoPlayerClick(View view){
+        Intent intent = new Intent(MainActivity.this, ScoresActivity.class);
+        startActivity(intent);
     }
 }

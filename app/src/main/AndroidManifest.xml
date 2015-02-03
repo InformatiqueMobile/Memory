@@ -18,11 +18,7 @@
         </activity>
         <activity
             android:name=".ScoresActivity"
-            android:label="@string/title_activity_scores"
-            android:parentActivityName=".MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.memory.memory.MainActivity" />
+            android:label="@string/title_activity_scores">
         </activity>
     </application>
 
