@@ -1,4 +1,4 @@
-package com.memory.memory;
+package com.memory.memory.model;
 
 import android.media.Image;
 
