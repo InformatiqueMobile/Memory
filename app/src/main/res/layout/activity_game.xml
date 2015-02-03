@@ -1,5 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
@@ -11,11 +12,12 @@
         android:id="@+id/textView" />
 
     <GridLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_alignTop="@+id/"
+        android:layout_width="550dp"
+        android:layout_height="700dp"
         android:columnCount="4"
         android:rowCount="6"
         android:background="#ffa1fffa"
-        android:clickable="true"></GridLayout>
+        android:clickable="true"/>
 
 </RelativeLayout>
