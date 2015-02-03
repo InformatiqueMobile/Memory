@@ -12,35 +12,44 @@
         android:layout_height="wrap_content"
         android:text="2 Players"
         android:id="@+id/twoPlayersButton"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/memoryGame"
+        android:layout_alignLeft="@+id/onePlayerButton"
+        android:layout_alignStart="@+id/onePlayerButton"
+        android:layout_marginTop="59dp"
+        android:layout_alignRight="@+id/onePlayerButton"
+        android:layout_alignEnd="@+id/onePlayerButton" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="1 Player"
         android:id="@+id/onePlayerButton"
-        android:layout_marginTop="50dp"
         android:onClick="onePlayerClick"
-        android:layout_below="@+id/twoPlayersButton"
-        android:layout_alignLeft="@+id/twoPlayersButton"
-        android:layout_alignStart="@+id/twoPlayersButton" />
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/highScoresButton"
+        android:layout_alignEnd="@+id/highScoresButton"
+        android:layout_alignLeft="@+id/highScoresButton"
+        android:layout_alignStart="@+id/highScoresButton" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="High Scores"
         android:id="@+id/highScoresButton"
-        android:layout_above="@+id/exitButton"
+        android:layout_marginBottom="83dp"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Exit"
-        android:id="@+id/exitButton"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/onePlayerButton"
-        android:layout_alignStart="@+id/onePlayerButton"
-        android:layout_marginBottom="58dp" />
+    <TextView
+        android:layout_width="400dp"
+        android:layout_height="30dp"
+        android:text="Memory Game"
+        android:id="@+id/memoryGame"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="20dp"
+        android:textColor="#ff1730ff"
+        android:textIsSelectable="false" />
+
 </RelativeLayout>
