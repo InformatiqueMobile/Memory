@@ -43,6 +43,7 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.memory.memory.NameActivity" />
+
         </activity>
         <activity
             android:name=".ResultActivity"

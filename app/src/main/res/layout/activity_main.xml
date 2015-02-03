@@ -17,7 +17,8 @@
         android:layout_alignStart="@+id/onePlayerButton"
         android:layout_marginTop="59dp"
         android:layout_alignRight="@+id/onePlayerButton"
-        android:layout_alignEnd="@+id/onePlayerButton" />
+        android:layout_alignEnd="@+id/onePlayerButton"
+        android:onClick="twoPlayersClick"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -38,7 +39,8 @@
         android:id="@+id/highScoresButton"
         android:layout_marginBottom="83dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="exitClick"/>
 
     <TextView
         android:layout_width="400dp"

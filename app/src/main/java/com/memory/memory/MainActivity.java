@@ -44,8 +44,8 @@ public class MainActivity extends ActionBarActivity {
         Toast.makeText(MainActivity.this, "Button Clicked", Toast.LENGTH_SHORT).show();
     }
 
-    public void twoPlayerClick(View view){
-        Intent intent = new Intent(MainActivity.this, ScoresActivity.class);
+    public void twoPlayersClick(View view){
+        Intent intent = new Intent(MainActivity.this, NameActivity.class);
         startActivity(intent);
     }
 
