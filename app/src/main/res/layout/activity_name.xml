@@ -7,23 +7,42 @@
     tools:context="com.memory.memory.NameActivity">
 
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/nameEditText"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="134dp"
-        android:text="Entrer Votre Nom" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Play"
         android:id="@+id/playButton"
-        android:layout_below="@+id/nameEditText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="63dp"
-        android:onClick="playClick"/>
+        android:onClick="playClick"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="125dp"
+        android:layout_marginEnd="125dp"
+        android:layout_marginBottom="103dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="First Player Name"
+        android:ems="10"
+        android:id="@+id/firstPlayerName"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="105dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="131dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Second Player Name"
+        android:ems="10"
+        android:id="@+id/secondPlayerName"
+        android:layout_alignBottom="@+id/firstPlayerName"
+        android:layout_alignRight="@+id/playButton"
+        android:layout_alignEnd="@+id/playButton" />
 
 </RelativeLayout>
