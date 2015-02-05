@@ -18,7 +18,8 @@
         android:layout_alignParentEnd="true"
         android:layout_marginRight="125dp"
         android:layout_marginEnd="125dp"
-        android:layout_marginBottom="103dp" />
+        android:layout_marginBottom="103dp"
+        android:background="@drawable/background_wood_table" />
 
     <EditText
         android:layout_width="wrap_content"
