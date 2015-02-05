@@ -15,15 +15,15 @@
         android:id="@+id/gameGrid"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentStart="false"
         android:numColumns="6"
         android:choiceMode="multipleChoice"
         android:clickable="true"
         android:columnWidth="@dimen/GridItems"
-        android:background="#ffaafff3"
         android:gravity="center"
         android:stretchMode="columnWidth"
-        />
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp" />
 
 
 </RelativeLayout>
