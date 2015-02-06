@@ -22,12 +22,10 @@
         android:stretchMode="columnWidth"
         android:verticalSpacing="10dp"
         android:horizontalSpacing="10dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="false"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        />
+        android:layout_toLeftOf="@+id/imageRed"
+        android:layout_toStartOf="@+id/imageRed"
+        android:layout_below="@+id/textView"
+        android:layout_alignBottom="@+id/playerOneTextView" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -39,9 +37,7 @@
         android:layout_gravity="left|bottom"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="30dp"
-        />
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -51,11 +47,37 @@
         android:id="@+id/playerTwoTextView"
         android:textColor="@color/link_text_material_light"
         android:layout_gravity="right|top"
-        android:layout_alignParentTop="true"
+        android:layout_alignTop="@+id/playerOneTextView"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="30dp"
-        />
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/imageGreen"
+        android:src="@drawable/circle_green"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/imageRed"
+        android:src="@drawable/circle_red"
+        android:layout_alignTop="@+id/imageGreen"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Memory"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="30dp" />
 
 
 </RelativeLayout>
