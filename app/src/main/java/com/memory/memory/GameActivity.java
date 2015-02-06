@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.memory.memory.model.Card;
+import com.memory.memory.model.Grid;
 import com.memory.memory.model.ImageAdapter;
 import com.memory.memory.model.Player;
 
@@ -30,7 +31,7 @@ public class GameActivity extends ActionBarActivity {
         final GridView gridview = (GridView) findViewById(R.id.gameGrid);
         gridview.setAdapter(new ImageAdapter(this));
 
-        createGrid();
+        final Grid grid = new Grid(4,6);
 
         playerOne = getIntent().getExtras().getParcelable("playerOne");
         TextView playerOneView = (TextView)findViewById(R.id.playerOneTextView);
@@ -49,9 +50,13 @@ public class GameActivity extends ActionBarActivity {
                 ImageView iv = (ImageView) gridview.getAdapter().getView(position, v, parent);
 
                 //if (iv.getImageAlpha() == R.drawable.back_red_2)
-                    iv.setImageResource(R.drawable.back_blue_0);
+                    //iv.setImageResource(R.drawable.back_blue_0);
                 //else
                   //  iv.setImageResource(R.drawable.back_red_2);
+                int column = position%4;
+                int row = position/4;
+                iv.setImageResource(grid.getCardGrid().get(row).get(column).getId());
+
             }
         });
 
