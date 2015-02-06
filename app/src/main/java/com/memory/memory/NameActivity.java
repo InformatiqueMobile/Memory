@@ -51,4 +51,5 @@ public class NameActivity extends ActionBarActivity {
         intent.putExtra("playerTwo", playerTwo);
         startActivity(intent);
     }
+
 }

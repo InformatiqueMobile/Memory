@@ -11,11 +11,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.memory.memory.model.Card;
 import com.memory.memory.model.ImageAdapter;
 import com.memory.memory.model.Player;
 
+import java.util.Vector;
+
 
 public class GameActivity extends ActionBarActivity {
+
+    private Player playerOne, playerTwo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,14 +30,14 @@ public class GameActivity extends ActionBarActivity {
         final GridView gridview = (GridView) findViewById(R.id.gameGrid);
         gridview.setAdapter(new ImageAdapter(this));
 
-        Player playerOne = getIntent().getExtras().getParcelable("playerOne");
+        createGrid();
 
+        playerOne = getIntent().getExtras().getParcelable("playerOne");
         TextView playerOneView = (TextView)findViewById(R.id.playerOneTextView);
         playerOneView.setText(playerOne.getName());
         playerOneView.setRotation(90);
 
-
-        Player playerTwo = getIntent().getExtras().getParcelable("playerTwo");
+        playerTwo = getIntent().getExtras().getParcelable("playerTwo");
         TextView playerTwoView = (TextView)findViewById(R.id.playerTwoTextView);
         playerTwoView.setText(playerTwo.getName());
         playerTwoView.setRotation(270);
@@ -43,11 +48,17 @@ public class GameActivity extends ActionBarActivity {
 
                 ImageView iv = (ImageView) gridview.getAdapter().getView(position, v, parent);
 
-                //if (iv.equals(R.drawable.back_red_2) )
-                iv.setImageResource(R.drawable.back_blue_0);
+                //if (iv.getImageAlpha() == R.drawable.back_red_2)
+                    iv.setImageResource(R.drawable.back_blue_0);
+                //else
+                  //  iv.setImageResource(R.drawable.back_red_2);
             }
         });
 
+
+    }
+
+    private void createGrid() {
 
     }
 }
