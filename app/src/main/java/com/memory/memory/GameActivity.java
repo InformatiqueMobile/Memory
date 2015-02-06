@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.memory.memory.model.ImageAdapter;
+import com.memory.memory.model.Player;
 
 
 public class GameActivity extends ActionBarActivity {
@@ -24,11 +25,17 @@ public class GameActivity extends ActionBarActivity {
         final GridView gridview = (GridView) findViewById(R.id.gameGrid);
         gridview.setAdapter(new ImageAdapter(this));
 
-        TextView playerTwo = (TextView)findViewById(R.id.playerTwoTextView);
-        playerTwo.setRotation(270);
+        Player playerOne = getIntent().getExtras().getParcelable("playerOne");
 
-        TextView playerOne = (TextView)findViewById(R.id.playerOneTextView);
-        playerOne.setRotation(90);
+        TextView playerOneView = (TextView)findViewById(R.id.playerOneTextView);
+        playerOneView.setText(playerOne.getName());
+        playerOneView.setRotation(90);
+
+
+        Player playerTwo = getIntent().getExtras().getParcelable("playerTwo");
+        TextView playerTwoView = (TextView)findViewById(R.id.playerTwoTextView);
+        playerTwoView.setText(playerTwo.getName());
+        playerTwoView.setRotation(270);
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
@@ -37,7 +44,7 @@ public class GameActivity extends ActionBarActivity {
                 ImageView iv = (ImageView) gridview.getAdapter().getView(position, v, parent);
 
                 //if (iv.equals(R.drawable.back_red_2) )
-                iv.setImageResource(R.drawable.no_image);
+                iv.setImageResource(R.drawable.back_blue_0);
             }
         });
 

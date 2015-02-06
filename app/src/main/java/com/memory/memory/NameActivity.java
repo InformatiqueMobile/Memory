@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import com.memory.memory.model.Player;
 
 
 public class NameActivity extends ActionBarActivity {
@@ -40,7 +44,11 @@ public class NameActivity extends ActionBarActivity {
     }
 
     public void playClick(View view){
+        Player playerOne = new Player(((EditText) findViewById(R.id.firstPlayerName)).getText().toString());
+        Player playerTwo = new Player(((EditText) findViewById(R.id.secondPlayerName)).getText().toString());
         Intent intent = new Intent(NameActivity.this, GameActivity.class);
+        intent.putExtra("playerOne", playerOne);
+        intent.putExtra("playerTwo", playerTwo);
         startActivity(intent);
     }
 }
