@@ -35,7 +35,9 @@ public class GameActivity extends ActionBarActivity {
                 //Toast.makeText(GameActivity.this, "" + position, Toast.LENGTH_SHORT).show();
 
                 ImageView iv = (ImageView) gridview.getAdapter().getView(position, v, parent);
-                iv.setImageResource(R.drawable.back_blue_0);
+
+                //if (iv.equals(R.drawable.back_red_2) )
+                iv.setImageResource(R.drawable.no_image);
             }
         });
 
