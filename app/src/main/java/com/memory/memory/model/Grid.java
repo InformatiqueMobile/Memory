@@ -2,6 +2,8 @@ package com.memory.memory.model;
 
 import com.memory.memory.R;
 
+import java.util.Collections;
+import java.util.Random;
 import java.util.Vector;
 
 /**
@@ -10,31 +12,32 @@ import java.util.Vector;
 public class Grid {
 
     //private Vector<Card> cards = new Vector<>();
-    private Vector<Vector<Card>> cardGrid  = new Vector<>();
+    private Vector<Card> cardGrid  = new Vector<>();
 
     public Grid(int column, int row) {
-        Vector<Card> cards = selectCards((column*row)/2);
+        Vector<Card> cards = selectCards((column * row) / 2);
 
         //TODO Random
 
-        Vector<Card> rows;
-        for (int i = 0; i < row ; i++){
+        //cardGrid = random(cards);
+        Collections.shuffle(cards, new Random(System.nanoTime()));
+        cardGrid = cards;
+        /*Vector<Card> rows;
+        for (int i = 0; i < row; i++){
             rows = new Vector<>();
-            for (int j = 0; j < column ; j++){
-                if (((i*column)+ j) < cards.size())
-                    rows.add(cards.get(i*column+j));
+            for (int j = 0; j < column; j++){
+                if (((i * column) + j) < cards.size())
+                    rows.add(cards.get(i * column + j));
                 else
-                    rows.add(cards.get((i*column) + j - cards.size()));//((i+1)*(j+1))-cards.size()));
+                    rows.add(cards.get((i * column) + j - cards.size()));
             }
             cardGrid.add(rows);
-        }
-        /*int i = 0, j = 0 ;rows = new Vector<>();
-        while(cards.iterator().hasNext()){
-            if ((j==0)&&(i!=0))    {cardGrid.add(rows);rows = new Vector<>();}
-            if (j==4)    {j=0;i++;}
-            rows.add(cards.iterator().next());
-            j++;
         }*/
+    }
+
+    private Vector<Card> random(Vector<Card> cards) {
+
+        return  cards;
     }
 
     private Vector<Card> selectCards(int number) {
@@ -45,15 +48,16 @@ public class Grid {
             c = new Card();
             c.setId(images[i]);
             cards.add(c);
+            cards.add(c);
         }
         return cards;
     }
 
-    public Vector<Vector<Card>> getCardGrid() {
+    public Vector<Card> getCardGrid() {
         return cardGrid;
     }
 
-    public void setCardGrid(Vector<Vector<Card>> cardGrid) {
+    public void setCardGrid(Vector<Card> cardGrid) {
         this.cardGrid = cardGrid;
     }
 

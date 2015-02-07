@@ -45,21 +45,13 @@ public class GameActivity extends ActionBarActivity {
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                //Toast.makeText(GameActivity.this, "" + position, Toast.LENGTH_SHORT).show();
-
                 ImageView iv = (ImageView) gridview.getAdapter().getView(position, v, parent);
-
-                //if (iv.getImageAlpha() == R.drawable.back_red_2)
-                    //iv.setImageResource(R.drawable.back_blue_0);
-                //else
-                  //  iv.setImageResource(R.drawable.back_red_2);
-                int column = position%4;
-                int row = position/4;
-                iv.setImageResource(grid.getCardGrid().get(row).get(column).getId());
-
+                int column = position % 4;
+                int row = position / 4;
+                iv.setImageResource(grid.getCardGrid().get(position).getId());
+//                Toast.makeText(GameActivity.this, "" + position, Toast.LENGTH_SHORT).show();
             }
         });
-
 
     }
 
