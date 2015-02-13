@@ -33,6 +33,9 @@ public class Grid {
             }
             cardGrid.add(rows);
         }*/
+        for (int i = 0; i < cardGrid.size(); i++){
+            cardGrid.get(i).setPosition(i);
+        }
     }
 
     private Vector<Card> random(Vector<Card> cards) {

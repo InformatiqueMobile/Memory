@@ -41,11 +41,14 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void onePlayerClick(View view){
-        Toast.makeText(MainActivity.this, "Button Clicked", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(MainActivity.this, NameActivity.class);
+        intent.putExtra("vsIA", true);
+        startActivity(intent);
     }
 
     public void twoPlayersClick(View view){
         Intent intent = new Intent(MainActivity.this, NameActivity.class);
+        intent.putExtra("vsIA", false);
         startActivity(intent);
     }
 

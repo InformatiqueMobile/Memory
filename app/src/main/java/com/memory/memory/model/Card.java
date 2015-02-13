@@ -8,6 +8,7 @@ import android.media.Image;
 public class Card {
     private int id;
     private Image image;
+    private int position;
 
     public int getId() {
         return id;
@@ -23,5 +24,13 @@ public class Card {
 
     public void setImage(Image image) {
         this.image = image;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
     }
 }

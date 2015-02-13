@@ -3,21 +3,63 @@ package com.memory.memory;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.memory.memory.model.Player;
 
 
 public class NameActivity extends ActionBarActivity {
 
+    boolean vsIA ;
+    EditText firstPlayerName, secondPlayerName;
+    Button playButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_name);
+
+        vsIA = getIntent().getBooleanExtra("vsIA", false);
+        firstPlayerName = (EditText) findViewById(R.id.firstPlayerName);
+        secondPlayerName = (EditText) findViewById(R.id.secondPlayerName);
+        if (vsIA){
+            secondPlayerName.setText("Nexus 7");
+            secondPlayerName.setEnabled(false);
+        }
+        playButton = (Button) findViewById(R.id.playButton);
+        playButton.setEnabled(false);
+
+        secondPlayerName.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (secondPlayerName.getText().toString().equals(""))
+                    playButton.setEnabled(false);
+                else if (firstPlayerName.getText().toString().equals(""))
+                    playButton.setEnabled(false);
+                else
+                    playButton.setEnabled(true);
+                return false;
+            }
+        });
+        firstPlayerName.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (firstPlayerName.getText().toString().equals(""))
+                    playButton.setEnabled(false);
+                else if (secondPlayerName.getText().toString().equals(""))
+                    playButton.setEnabled(false);
+                else
+                    playButton.setEnabled(true);
+                return false;
+            }
+        });
     }
 
 

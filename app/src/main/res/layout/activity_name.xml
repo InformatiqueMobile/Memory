@@ -21,7 +21,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="First Player Name"
             android:ems="10"
             android:id="@+id/firstPlayerName"
             android:layout_alignParentTop="true"
@@ -36,7 +35,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Second Player Name"
             android:ems="10"
             android:id="@+id/secondPlayerName"
             android:layout_alignBottom="@+id/firstPlayerName"
@@ -53,6 +51,22 @@
             android:onClick="playClick"
             android:layout_above="@+id/secondPlayerName"
             android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="First Player Name"
+            android:id="@+id/firstPlayerNameTextView"
+            android:layout_gravity="left|top" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Second Player Name"
+            android:id="@+id/secondPlayerNameTextView"
+            android:layout_gravity="right|top" />
     </FrameLayout>
 
 </RelativeLayout>
