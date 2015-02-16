@@ -24,7 +24,8 @@
         android:choiceMode="none"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/highscoresTextView" />
     <!--TextView android:id="@+id/numElement"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

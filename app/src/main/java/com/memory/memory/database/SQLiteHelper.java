@@ -86,7 +86,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public List<Player> getAllScores() {
         List<Player> scores = new LinkedList<Player>();
 
-        String query = "SELECT  * FROM " + TABLE_SCORES + "ORDER BY `score` LIMIT 10";
+        String query = "SELECT  * FROM " + TABLE_SCORES ;//+ "ORDER BY " + KEY_SCORE + " DESC";//  LIMIT 10";
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
