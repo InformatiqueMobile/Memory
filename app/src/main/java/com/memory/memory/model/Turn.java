@@ -39,6 +39,7 @@ public class Turn {
         this.player = player;
     }
 
+    //verifie si c'est un tour gagniant
     public boolean equalCards(){
         if (this.cardTwo != null)
             if (this.cardOne.getId() == this.cardTwo.getId()

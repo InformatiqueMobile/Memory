@@ -19,7 +19,6 @@ import com.memory.memory.model.Grid;
 import com.memory.memory.adapter.ImageAdapter;
 import com.memory.memory.model.Player;
 import com.memory.memory.model.Tablet;
-import com.memory.memory.model.TabletTask;
 import com.memory.memory.model.Turn;
 
 

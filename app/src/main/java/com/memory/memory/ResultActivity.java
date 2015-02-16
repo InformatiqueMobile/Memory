@@ -39,13 +39,6 @@ public class ResultActivity extends ActionBarActivity {
         db.addScore(playerOne);
         db.addScore(playerTwo);
 
-        /*ScoresDB scoresDB = new ScoresDB(this);
-        scoresDB.open();
-
-        scoresDB.insertScore(winner);
-        scoresDB.insertScore(loser);
-
-        scoresDB.close();*/
     }
 
 
@@ -71,6 +64,7 @@ public class ResultActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    //refaire une partie
     public void replayClick(View view){
             Intent intent = new Intent(ResultActivity.this, GameActivity.class);
             intent.putExtra("playerOne", playerOne);

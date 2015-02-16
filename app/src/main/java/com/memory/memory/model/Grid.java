@@ -12,8 +12,11 @@ import java.util.Vector;
 public class Grid {
     private Vector<Card> cardGrid  = new Vector<>();
 
+    //crée la grille
     public Grid(int column, int row) {
         Vector<Card> cards = selectCards((column * row) / 2);
+
+        // mélange la grille
         Collections.shuffle(cards, new Random(System.nanoTime()));
         cardGrid = cards;
         for (int i = 0; i < cardGrid.size(); i++){
@@ -22,6 +25,7 @@ public class Grid {
     }
 
 
+    //ajoute les cartes
     private Vector<Card> selectCards(int number) {
         Vector<Card> cards = new Vector<>();
         Card c1,c2;
@@ -45,7 +49,7 @@ public class Grid {
         this.cardGrid = cardGrid;
     }
 
-    // references to our images
+    // references des images
     private Integer[] images = {
             R.drawable.clubs_01, R.drawable.hearts_02,
             R.drawable.spades_05, R.drawable.diamonds_06,

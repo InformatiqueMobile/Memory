@@ -50,6 +50,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     private static final String[] COLUMNS = {KEY_ID,KEY_NAME,KEY_SCORE};
 
+
+    // ajoute un score à la table
     public void addScore(Player player){
         Log.d("addScore", player.toString());
         SQLiteDatabase db = this.getWritableDatabase();
@@ -63,26 +65,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    public Player getScore(int id){
-
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        Cursor cursor =
-                db.query(TABLE_SCORES, COLUMNS, " id = ?",
-                        new String[] { String.valueOf(id) },
-                        null, null, null, null);
-
-        if (cursor != null)
-            cursor.moveToFirst();
-
-        Player player = new Player(cursor.getString(1));
-        player.setScore(cursor.getInt(2));
-
-        Log.d("getScore(" + id + ")", player.toString());
-
-        return player;
-    }
-
+    //récupere tous les scores
     public List<Player> getAllScores() {
         List<Player> scores = new LinkedList<Player>();
 
@@ -106,34 +89,4 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         return scores;
     }
 
-/*    public int updateScores(Player player) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put("name", player.getName());
-        values.put("score", player.getScore());
-
-        int i = db.update(TABLE_SCORES,
-                values,
-                KEY_ID+" = ?",
-                new String[] { String.valueOf(player.getId()) });
-
-        db.close();
-
-        return i;
-
-    }
-
-
-    public void deleteScore(Player player) {
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        db.delete(TABLE_SCORES,
-                KEY_ID+" = ?",
-                new String[] { String.valueOf(player.getId()) });
-
-        db.close();
-
-        Log.d("deleteScore", player.toString());
-
-    }*/
 }

@@ -50,6 +50,7 @@ public class Card {
         this.parent = parent;
     }
 
+    //enléve une carte du jeu
     public void takeOff(GridView gridView){
         ImageView iv = (ImageView) gridView.getAdapter().getView(this.position,
                 this.view, this.parent);
@@ -58,6 +59,7 @@ public class Card {
         iv.setEnabled(false);
     }
 
+    //renverse une carte
     public void reverse(GridView gridView){
         ImageView iv = (ImageView) gridView.getAdapter().getView(this.position,
                 this.view, this.parent);

@@ -87,6 +87,7 @@ public class NameActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    //lancer le jeu
     public void playClick(View view){
         Player playerOne = new Player(((EditText) findViewById(R.id.firstPlayerName)).getText().toString());
         Tablet playerTwo = new Tablet(((EditText) findViewById(R.id.secondPlayerName)).getText().toString(), 4);

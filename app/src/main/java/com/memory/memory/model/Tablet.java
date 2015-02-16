@@ -58,6 +58,7 @@ public class Tablet extends Player  implements Parcelable {
         }
     };
 
+    //ajoute une cartes a la memoire
     public void addCard(Card card){
         if (memory.indexOf(card) == -1) {
             if (memory.size() < memorySize)
@@ -69,6 +70,7 @@ public class Tablet extends Player  implements Parcelable {
         }
     }
 
+    // supprime les cartes retirées du jeu
     public void winTurn(Card cardOne, Card cardTwo){
         memory.removeElement(cardOne);
         memory.removeElement(cardTwo);
@@ -76,7 +78,9 @@ public class Tablet extends Player  implements Parcelable {
         positions.removeElement(cardTwo.getPosition());
     }
 
+    // tour de jeu de l'IA
     public boolean play(GameActivity gameActivity){
+        //verifie s'il y a deux catres identiques dans la memoire
             for (int i = 0; i < memory.size(); i++){
                 for (int j = i + 1; j < memory.size(); j++){
                     if (memory.get(i).getId() == memory.get(j).getId()){
@@ -86,8 +90,11 @@ public class Tablet extends Player  implements Parcelable {
                     }
                 }
             }
+        //sinon
+        //pioche une carte au hazard
         int pos = randomPosition();
         gameActivity.getGridview().performItemClick(gameActivity.getGridview().getChildAt(pos),pos,0);
+        //verifie si elle correspond à une carte dans la memoire
         if (memory.size() > 0)
             for (int i = 0; i < memory.size() - 1; i++){
                 if (memory.get(i).getId() == gameActivity.getGrid().getCardGrid().get(pos).getId()){
@@ -95,6 +102,8 @@ public class Tablet extends Player  implements Parcelable {
                     return true;
                 }
             }
+        //sinon
+        //pioche une 2eme carte au hazard
         int pos2 = randomPosition();
         while ( pos == pos2){pos2 = randomPosition();}
         gameActivity.getGridview().performItemClick(gameActivity.getGridview().getChildAt(pos2), pos2, 0);
