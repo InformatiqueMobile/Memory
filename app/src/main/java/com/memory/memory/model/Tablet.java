@@ -59,11 +59,13 @@ public class Tablet extends Player  implements Parcelable {
     };
 
     public void addCard(Card card){
-        if (memory.size() < memorySize)
-            memory.add(card);
-        else{
-            memory.remove(0);
-            memory.add(card);
+        if (memory.indexOf(card) == -1) {
+            if (memory.size() < memorySize)
+                memory.add(card);
+            else {
+                memory.remove(0);
+                memory.add(card);
+            }
         }
     }
 

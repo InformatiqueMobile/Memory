@@ -15,4 +15,28 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="244dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quit"
+        android:onClick="mainClick"
+        android:id="@+id/quitButton"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/winnerTextView"
+        android:layout_toStartOf="@+id/winnerTextView"
+        android:layout_marginRight="75dp"
+        android:layout_marginEnd="75dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Replay"
+        android:onClick="replayClick"
+        android:id="@+id/replayButton"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/winnerTextView"
+        android:layout_toEndOf="@+id/winnerTextView"
+        android:layout_marginLeft="66dp"
+        android:layout_marginStart="66dp" />
 </RelativeLayout>

@@ -89,11 +89,7 @@ public class NameActivity extends ActionBarActivity {
 
     public void playClick(View view){
         Player playerOne = new Player(((EditText) findViewById(R.id.firstPlayerName)).getText().toString());
-        Tablet playerTwo;
-        //if (vsIA)
-            playerTwo = new Tablet(((EditText) findViewById(R.id.secondPlayerName)).getText().toString(), 4);
-        /*else
-            playerTwo = new Player(((EditText) findViewById(R.id.secondPlayerName)).getText().toString());*/
+        Tablet playerTwo = new Tablet(((EditText) findViewById(R.id.secondPlayerName)).getText().toString(), 4);
         if (!playerOne.getName().equals(playerTwo.getName())) {
             Intent intent = new Intent(NameActivity.this, GameActivity.class);
             intent.putExtra("playerOne", playerOne);

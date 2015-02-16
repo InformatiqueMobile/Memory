@@ -56,4 +56,14 @@
         android:textColor="#ff1730ff"
         android:textIsSelectable="false" />
 
+    <!--Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quit"
+        android:id="@+id/quitButton"
+        android:onClick="exitClick"
+        android:layout_alignBottom="@+id/highScoresButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" /-->
+
 </RelativeLayout>

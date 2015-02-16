@@ -1,18 +1,23 @@
 package com.memory.memory;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.memory.memory.database.ScoresDB;
 import com.memory.memory.model.Player;
+import com.memory.memory.model.Tablet;
 
 
 public class ResultActivity extends ActionBarActivity {
 
-    private Player playerOne, playerTwo;
+    private Player playerOne;
+    private Tablet playerTwo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,5 +64,17 @@ public class ResultActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void replayClick(View view){
+            Intent intent = new Intent(ResultActivity.this, GameActivity.class);
+            intent.putExtra("playerOne", playerOne);
+            intent.putExtra("playerTwo", playerTwo);
+            startActivity(intent);
+    }
+
+    public void mainClick(View view){
+        Intent intent = new Intent(ResultActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 }

@@ -1,9 +1,13 @@
 package com.memory.memory;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -67,6 +71,8 @@ public class GameActivity extends ActionBarActivity {
                         gridview.setEnabled(false);
                         if (turn.equalCards()) {
                             turn.getPlayer().setScore(turn.getPlayer().getScore() + 1);
+                            ((TextView) findViewById(R.id.playerOneScoreTextView)).setText(playerOne.getScore() + "");
+                            ((TextView) findViewById(R.id.playerTwoScoreTextView)).setText(playerTwo.getScore() +"");
                             if (vsIA())
                                 playerTwo.winTurn(turn.getCardOne(), turn.getCardTwo());
                             if (turn.getPlayer().equals(playerOne)) {
@@ -120,6 +126,9 @@ public class GameActivity extends ActionBarActivity {
             }
         });
 
+        if (vsIA()){
+            playerTwo.initPositions(4,6);
+        }
         if (Math.random() < 0.5) {
             Toast.makeText(GameActivity.this, playerOne.getName() + " start", Toast.LENGTH_SHORT).show();
             ((ImageView) findViewById(R.id.playerOneToken)).setImageResource(R.drawable.circle_green);
@@ -134,9 +143,6 @@ public class GameActivity extends ActionBarActivity {
             }
         }
 
-        if (vsIA()){
-            playerTwo.initPositions(4,6);
-        }
     }
 
     private boolean vsIA() {
@@ -144,11 +150,10 @@ public class GameActivity extends ActionBarActivity {
     }
 
     private void turnEnd() {
+        if (turn.getCardOne() != null)
         if (turn.equalCards()) {
             turn.getCardOne().takeOff(gridview);
             turn.getCardTwo().takeOff(gridview);
-            Toast.makeText(GameActivity.this, turn.getPlayer().getName() + " " + turn.getPlayer().getScore(),
-                    Toast.LENGTH_SHORT).show();
             if (playerOne.getScore() + playerTwo.getScore() < 12)
                 turn = new Turn(turn.getPlayer());
             else
@@ -174,6 +179,44 @@ public class GameActivity extends ActionBarActivity {
         intent.putExtra("playerOne", playerOne);
         intent.putExtra("playerTwo", playerTwo);
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            //showDialog();
+            Dialog dialog = onCreateDialog();
+            dialog.show();
+        }
+        return true;
+    }
+    protected Dialog onCreateDialog() {
+// Création d'un boite de dialogue
+        Dialog dialog;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setMessage("you want to leave the game?");
+        builder.setCancelable(false);
+        builder.setTitle("Confirmation");
+
+        builder.setPositiveButton("YES",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent intent = new Intent(GameActivity.this, MainActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
+        builder.setNegativeButton("NO",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        dialog = builder.create();
+        return dialog;
     }
 
     public GridView getGridview() {
