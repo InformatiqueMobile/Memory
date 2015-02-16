@@ -16,42 +16,25 @@ public class Grid {
 
     public Grid(int column, int row) {
         Vector<Card> cards = selectCards((column * row) / 2);
-
-        //TODO Random
-
-        //cardGrid = random(cards);
         Collections.shuffle(cards, new Random(System.nanoTime()));
         cardGrid = cards;
-        /*Vector<Card> rows;
-        for (int i = 0; i < row; i++){
-            rows = new Vector<>();
-            for (int j = 0; j < column; j++){
-                if (((i * column) + j) < cards.size())
-                    rows.add(cards.get(i * column + j));
-                else
-                    rows.add(cards.get((i * column) + j - cards.size()));
-            }
-            cardGrid.add(rows);
-        }*/
         for (int i = 0; i < cardGrid.size(); i++){
             cardGrid.get(i).setPosition(i);
         }
     }
 
-    private Vector<Card> random(Vector<Card> cards) {
-
-        return  cards;
-    }
 
     private Vector<Card> selectCards(int number) {
         Vector<Card> cards = new Vector<>();
-        Card c;
+        Card c1,c2;
         for (int i = 0; i < number ; i++)
         {
-            c = new Card();
-            c.setId(images[i]);
-            cards.add(c);
-            cards.add(c);
+            c1 = new Card();
+            c1.setId(images[i]);
+            cards.add(c1);
+            c2 = new Card();
+            c2.setId(images[i]);
+            cards.add(c2);
         }
         return cards;
     }

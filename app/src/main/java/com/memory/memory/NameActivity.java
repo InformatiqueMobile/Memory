@@ -1,6 +1,7 @@
 package com.memory.memory;
 
 import android.content.Intent;
+import android.os.Build;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.memory.memory.model.Player;
+import com.memory.memory.model.Tablet;
 
 
 public class NameActivity extends ActionBarActivity {
@@ -30,7 +32,7 @@ public class NameActivity extends ActionBarActivity {
         firstPlayerName = (EditText) findViewById(R.id.firstPlayerName);
         secondPlayerName = (EditText) findViewById(R.id.secondPlayerName);
         if (vsIA){
-            secondPlayerName.setText("Nexus 7");
+            secondPlayerName.setText("ASUS Nexus 7");
             secondPlayerName.setEnabled(false);
         }
         playButton = (Button) findViewById(R.id.playButton);
@@ -87,11 +89,17 @@ public class NameActivity extends ActionBarActivity {
 
     public void playClick(View view){
         Player playerOne = new Player(((EditText) findViewById(R.id.firstPlayerName)).getText().toString());
-        Player playerTwo = new Player(((EditText) findViewById(R.id.secondPlayerName)).getText().toString());
-        Intent intent = new Intent(NameActivity.this, GameActivity.class);
-        intent.putExtra("playerOne", playerOne);
-        intent.putExtra("playerTwo", playerTwo);
-        startActivity(intent);
+        Tablet playerTwo;
+        //if (vsIA)
+            playerTwo = new Tablet(((EditText) findViewById(R.id.secondPlayerName)).getText().toString(), 4);
+        /*else
+            playerTwo = new Player(((EditText) findViewById(R.id.secondPlayerName)).getText().toString());*/
+        if (!playerOne.getName().equals(playerTwo.getName())) {
+            Intent intent = new Intent(NameActivity.this, GameActivity.class);
+            intent.putExtra("playerOne", playerOne);
+            intent.putExtra("playerTwo", playerTwo);
+            startActivity(intent);
+        }
     }
 
 }

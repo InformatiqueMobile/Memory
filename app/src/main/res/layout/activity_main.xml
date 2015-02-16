@@ -42,7 +42,7 @@
         android:layout_marginBottom="83dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:onClick="exitClick"/>
+        android:onClick="highscoresClick"/>
 
     <TextView
         android:layout_width="400dp"

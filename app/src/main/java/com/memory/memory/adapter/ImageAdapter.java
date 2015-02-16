@@ -1,4 +1,4 @@
-package com.memory.memory.model;
+package com.memory.memory.adapter;
 
 import android.content.Context;
 import android.view.View;
@@ -31,10 +31,9 @@ public class ImageAdapter extends BaseAdapter {
         return 0;
     }
 
-    // create a new ImageView for each item referenced by the Adapter
     public View getView(int position, View convertView, ViewGroup parent) {
         ImageView imageView;
-        if (convertView == null) {  // if it's not recycled, initialize some attributes
+        if (convertView == null) {
             imageView = new ImageView(mContext);
             imageView.setLayoutParams(new GridView.LayoutParams(230, 230));
             imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);

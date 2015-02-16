@@ -52,6 +52,11 @@ public class MainActivity extends ActionBarActivity {
         startActivity(intent);
     }
 
+    public void highscoresClick(View view){
+        Intent intent = new Intent(MainActivity.this, ScoresActivity.class);
+        startActivity(intent);
+    }
+
     public void exitClick(){
         finish();
         System.exit(0);

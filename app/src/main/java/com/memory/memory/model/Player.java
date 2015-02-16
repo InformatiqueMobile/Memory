@@ -6,7 +6,7 @@ import android.os.Parcelable;
 /**
  * Created by Zalila on 2015-01-30.
  */
-//impl Parcelable pour pouvoir l'utiliser dans un Bundle
+
 public class Player implements Parcelable{
 
     private String name;
@@ -17,14 +17,12 @@ public class Player implements Parcelable{
         this.score = 0;
     }
 
-    //décrit le Parcel
     @Override
     public int describeContents()
     {
         return 0;
     }
 
-    // écrit l'Objet dans le Parcel
     @Override
     public void writeToParcel(Parcel dest, int flags)
     {
@@ -69,5 +67,10 @@ public class Player implements Parcelable{
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    @Override
+    public String toString() {
+        return name + '\t' + score ;
     }
 }

@@ -4,14 +4,38 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import com.memory.memory.database.ScoresDB;
+import com.memory.memory.model.Player;
 
 
 public class ResultActivity extends ActionBarActivity {
+
+    private Player playerOne, playerTwo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+
+        playerOne = getIntent().getExtras().getParcelable("playerOne");
+        playerTwo = getIntent().getExtras().getParcelable("playerTwo");
+        TextView winnerView = (TextView) findViewById(R.id.winnerTextView);
+        if (playerOne.getScore() == playerTwo.getScore())
+            winnerView.setText("DRAW");
+        else if (playerOne.getScore() > playerTwo.getScore())
+            winnerView.setText(playerOne.getName());
+        else
+            winnerView.setText(playerTwo.getName());
+
+        /*ScoresDB scoresDB = new ScoresDB(this);
+        scoresDB.open();
+
+        scoresDB.insertScore(winner);
+        scoresDB.insertScore(loser);
+
+        scoresDB.close();*/
     }
 
 

@@ -4,6 +4,15 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import com.memory.memory.adapter.StringAdapter;
+import com.memory.memory.database.ScoresDB;
+import com.memory.memory.model.Player;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ScoresActivity extends ActionBarActivity {
@@ -12,6 +21,25 @@ public class ScoresActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scores);
+
+        ScoresDB scoresDB = new ScoresDB(this);
+
+        scoresDB.open();
+        List<Player> players = scoresDB.getAllScores();
+        ListView listPlayers = (ListView) findViewById(R.id.highscoresListView);
+
+        //StringAdapter adapter = new StringAdapter(getApplicationContext(), players);
+        //listPlayers.setAdapter(adapter);
+        //adapter.notifyDataSetChanged();
+
+        List<String> exemple = new ArrayList<String>();
+        for (int i = 0; i < players.size(); i++){
+            exemple.add(i + "-\t" + players.get(i).toString() );
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, exemple);
+        listPlayers.setAdapter(adapter);
+        scoresDB.close();
     }
 
 

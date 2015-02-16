@@ -40,8 +40,10 @@ public class Turn {
     }
 
     public boolean equalCards(){
-        if (this.cardOne.getId() == this.cardTwo.getId())
-            return true;
+        if (this.cardTwo != null)
+            if (this.cardOne.getId() == this.cardTwo.getId()
+                    && this.cardOne.getPosition() != this.cardTwo.getPosition())
+                return true;
         return false;
     }
 }

@@ -43,15 +43,6 @@
             android:layout_gravity="right|top"
             android:layout_marginTop="130dp" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Play"
-            android:id="@+id/playButton"
-            android:onClick="playClick"
-            android:layout_above="@+id/secondPlayerName"
-            android:layout_gravity="center" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -67,6 +58,15 @@
             android:text="Second Player Name"
             android:id="@+id/secondPlayerNameTextView"
             android:layout_gravity="right|top" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Play"
+            android:id="@+id/playButton"
+            android:onClick="playClick"
+            android:layout_above="@+id/secondPlayerName"
+            android:layout_gravity="center" />
     </FrameLayout>
 
 </RelativeLayout>

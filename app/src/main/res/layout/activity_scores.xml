@@ -7,4 +7,40 @@
     android:background="@drawable/background_wood_table"
     tools:context="com.memory.memory.ScoresActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="High Scores :"
+        android:id="@+id/highscoresTextView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/highscoresListView"
+        android:choiceMode="none"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <!--TextView android:id="@+id/numElement"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:textColor="#fff"
+        android:gravity="left"/>
+    <TextView android:id="@+id/element"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:textColor="#fff"
+        android:gravity="left" />
+    <TextView android:id="@+id/score"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:textColor="#fff"
+        android:gravity="left" /-->
 </RelativeLayout>
