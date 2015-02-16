@@ -41,12 +41,12 @@ public class GameActivity extends ActionBarActivity {
         playerOne = getIntent().getExtras().getParcelable("playerOne");
         TextView playerOneView = (TextView) findViewById(R.id.playerOneTextView);
         playerOneView.setText(playerOne.getName());
-        playerOneView.setRotation(90);
+        //playerOneView.setRotation(90);
 
         playerTwo = getIntent().getExtras().getParcelable("playerTwo");
         TextView playerTwoView = (TextView) findViewById(R.id.playerTwoTextView);
         playerTwoView.setText(playerTwo.getName());
-        playerTwoView.setRotation(270);
+        //playerTwoView.setRotation(270);
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {

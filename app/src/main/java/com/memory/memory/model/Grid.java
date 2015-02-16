@@ -10,8 +10,6 @@ import java.util.Vector;
  * Created by Zalila on 2015-01-30.
  */
 public class Grid {
-
-    //private Vector<Card> cards = new Vector<>();
     private Vector<Card> cardGrid  = new Vector<>();
 
     public Grid(int column, int row) {
