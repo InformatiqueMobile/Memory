@@ -6,10 +6,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
-import com.memory.memory.database.ScoresDB;
+import com.memory.memory.database.SQLiteHelper;
 import com.memory.memory.model.Player;
 import com.memory.memory.model.Tablet;
 
@@ -33,6 +32,12 @@ public class ResultActivity extends ActionBarActivity {
             winnerView.setText(playerOne.getName());
         else
             winnerView.setText(playerTwo.getName());
+
+
+        SQLiteHelper db = new SQLiteHelper(this);
+
+        db.addScore(playerOne);
+        db.addScore(playerTwo);
 
         /*ScoresDB scoresDB = new ScoresDB(this);
         scoresDB.open();

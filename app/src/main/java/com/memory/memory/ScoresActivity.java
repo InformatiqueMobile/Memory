@@ -7,8 +7,7 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.memory.memory.adapter.StringAdapter;
-import com.memory.memory.database.ScoresDB;
+import com.memory.memory.database.SQLiteHelper;
 import com.memory.memory.model.Player;
 
 import java.util.ArrayList;
@@ -22,15 +21,11 @@ public class ScoresActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scores);
 
-        ScoresDB scoresDB = new ScoresDB(this);
 
-        scoresDB.open();
-        List<Player> players = scoresDB.getAllScores();
+
+        SQLiteHelper db = new SQLiteHelper(this);
+        List<Player> players = db.getAllScores();
         ListView listPlayers = (ListView) findViewById(R.id.highscoresListView);
-
-        //StringAdapter adapter = new StringAdapter(getApplicationContext(), players);
-        //listPlayers.setAdapter(adapter);
-        //adapter.notifyDataSetChanged();
 
         List<String> exemple = new ArrayList<String>();
         for (int i = 0; i < players.size(); i++){
@@ -39,7 +34,7 @@ public class ScoresActivity extends ActionBarActivity {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, exemple);
         listPlayers.setAdapter(adapter);
-        scoresDB.close();
+
     }
 
 
